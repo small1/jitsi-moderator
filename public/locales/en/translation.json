@@ -1,0 +1,52 @@
+{
+	"add": "Add",
+	"ask-to-get-moderator-role": "Request to become moderator",
+
+	"breakout-room-section": {
+		"title": "Breakout Rooms Commands",
+		"ingress": "This section contains commands related to Breakout Rooms."
+	},
+	"jitsi-commands-section": {
+		"title": "Jitsi Commands",
+		"ingress": "This section contains Jitsi Commands that can be used during the meeting."
+	},
+	"invite-section": {
+		"title": "Invite to meeting",
+		"ingress": "Use one of the buttons below to copy a meeting link to either participants or other moderators."
+	},
+
+	"participant-toast": {
+		"title": "Participant link copied",
+		"description": "The link for joining as a participant has been copied."
+	},
+	"moderator-toast": {
+		"title": "Moderator link copied",
+		"description": "The link for joining as a moderator has been copied."
+	},
+
+	"auto-assign": "Auto-assign",
+	"breakout-room-name": "Breakout Room Name",
+	"join": "Join",
+	"send": "Send",
+	"mute-everyone": "Mute Everyone",
+	"focus-on-moderator": "Focus on Moderator",
+	"url-to-meeting": "URL to Meeting",
+	"your-message": "Your Message",
+	"call-back-to-main-room": "Call everyone back",
+	"you-are-not-moderator": "You are not a moderator",
+	"you-need-to-have-moderator-role": "You must have the moderator role to use all the commands in this side panel. Contact one of the current moderators in the meeting.",
+	"main-room": "Main conference",
+	"message-will-be-sent-to": "Your message will be sent to the following breakout rooms: {{rooms}}",
+	"paste-in-url-or-create": "Please paste the URL for your Jitsi meeting below or click on 'Create new meeting' to create a new meeting",
+	"create-new-meeting": "Create new meeting",
+	"or": "or",
+	"all-rooms": "All rooms",
+	"meeting-not-found": "Meeting not found",
+	"meeting-does-not-exist": "The meeting you are trying to join does not exist. Please go back to the start page and try again.",
+	"go-back-to-start": "Go back to the start page",
+	"leave-breakout-room": "Leave breakout room",
+	"remove": "Delete",
+	"edit": "Edit",
+	"copy-moderator-link": "Copy moderator link",
+	"copy-participant-link": "Copy participant link"
+}

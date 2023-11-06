@@ -1,0 +1,52 @@
+{
+	"add": "Lägg till",
+	"ask-to-get-moderator-role": "Begär att få moderator-roll",
+
+	"breakout-room-section": {
+		"title": "Grupprums-kommandon",
+		"ingress": "Denna sektion innehåller enbart kommandon som är relaterade till grupprum."
+	},
+	"jitsi-commands-section": {
+		"title": "Jitsi-kommandon",
+		"ingress": "Denna sektion innehåller kommandon som du kan dra nytta av under ditt möte."
+	},
+	"invite-section": {
+		"title": "Bjud in till mötet",
+		"ingress": "Använd en av knapparna nedan för att kopiera en möteslänk till antingen deltagare eller andra moderatorer."
+	},
+
+	"participant-toast": {
+		"title": "Deltagarlänk kopierad",
+		"description": "Din länk för att ansluta som deltagare har kopierats."
+	},
+	"moderator-toast": {
+		"title": "Moderatorlänk kopierad",
+		"description": "Din länk för att ansluta som moderator har kopierats."
+	},
+
+	"breakout-room-name": "Grupprumsnamn",
+	"auto-assign": "Autofördela",
+	"join": "Anslut",
+	"send": "Skicka",
+	"mute-everyone": "Tysta alla",
+	"focus-on-moderator": "Fokus på moderator",
+	"url-to-meeting": "URL till mötet",
+	"your-message": "Ditt meddelande",
+	"call-back-to-main-room": "Kalla tillbaka alla",
+	"you-are-not-moderator": "Du är inte moderator",
+	"you-need-to-have-moderator-role": "Du måste ha moderator-rollen för att kunna använda alla kommandon i denna sidopanel. Kontakta någon av de nuvarande moderatorerna i mötet.",
+	"main-room": "Huvudrum",
+	"message-will-be-sent-to": "Ditt meddelande kommer att skickas till följande grupprum: {{rooms}}",
+	"paste-in-url-or-create": "Klistra in url:en till ditt jitsi-möte nedan eller tryck på 'Skapa nytt möte' för att skapa ett nytt möte",
+	"create-new-meeting": "Skapa nytt möte",
+	"or": "eller",
+	"all-rooms": "Alla rum",
+	"meeting-not-found": "Mötet hittades inte",
+	"meeting-does-not-exist": "Det angivna mötet existerar inte. Gå tillbaka till startsidan och försök igen.",
+	"go-back-to-start": "Tillbaka till startsidan",
+	"leave-breakout-room": "Lämna grupprum",
+	"remove": "Ta bort",
+	"edit": "Redigera",
+	"copy-moderator-link": "Kopiera moderator-länk",
+	"copy-participant-link": "Kopiera deltagar-länk"
+}
