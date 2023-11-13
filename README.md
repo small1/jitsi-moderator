@@ -50,3 +50,10 @@ It is possible to create a new meeting through the website by clicking the "Crea
     domain: "example-jitsi-meeting-instance.com"
 }
 ```
+
+## Deployment
+
+This application is deployed to GitHub Pages, which requires the use of a HashRouter instead of BrowserRouter.
+This is because BrowserRouter relies on the HTML5 history API, which is not supported by GitHub Pages.
+HashRouter uses the URL hash to simulate a full URL and allows for proper routing on GitHub Pages.
+Visit this [link](https://create-react-app.dev/docs/deployment/#github-pages) for more information.

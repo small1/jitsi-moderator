@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import { loader as meetingLoader } from "./routes/Meeting";
 import Error from "./routes/Error";
 import Home from "./routes/Home";
 import Meeting from "./routes/Meeting";
 import Routes from "./utils/enums/Routes";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
 	{
 		path: Routes.ROOT,
 		element: <App />,
