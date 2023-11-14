@@ -14,31 +14,31 @@ A React Vite app that adds more features on top of Jitsi to help manage meetings
 1. Install the dependencies:
 
 ```
-yarn install
+npm install
 ```
 
 2. Start the development server:
 
 ```
-yarn dev
+npm run dev
 ```
 
 3. Run the tests:
 
 ```
-yarn test
+npm test
 ```
 
 4. Build the production version:
 
 ```
-yarn build
+npm run build
 ```
 
 5. Start the production version:
 
 ```
-yarn start
+npm start
 ```
 
 ## Config
