@@ -42,7 +42,7 @@ const AutoSizingChatBox = ({
 	);
 };
 
-export const ChatBox = styled.textarea`
+const ChatBox = styled.textarea`
 	font-family: -apple-system, BlinkMacSystemFont, open_sanslight,
 		"Helvetica Neue", Helvetica, Arial, sans-serif !important;
 	padding: ${Theme.spacing.xs};

@@ -16,7 +16,7 @@ const SidePanel = ({ isUserModerator }: ISidePanel) => {
 	const { t } = useTranslation();
 
 	return (
-		<SidePanelCard gutter="m">
+		<SidePanelCard $gutter="m">
 			<SidePanelList>
 				<>
 					{!isUserModerator && (

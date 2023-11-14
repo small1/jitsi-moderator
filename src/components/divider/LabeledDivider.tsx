@@ -11,7 +11,7 @@ const LabeledDivider = ({ label }: ILabeledDivider) => {
 	return (
 		<DividersContainer>
 			<SectionDivider />
-			<Label color="gray">{label}</Label>
+			<Label $color="gray">{label}</Label>
 			<SectionDivider />
 		</DividersContainer>
 	);

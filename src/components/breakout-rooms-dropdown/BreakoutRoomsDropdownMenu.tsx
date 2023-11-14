@@ -70,7 +70,7 @@ const BreakoutRoomsDropdownMenu = ({
 	};
 
 	return (
-		<BreakoutRoomsMenu ref={menuRef} isOpen={isOpen} top={menuHeight}>
+		<BreakoutRoomsMenu ref={menuRef} $isOpen={isOpen} $top={menuHeight}>
 			{renderAllBreakoutRoomItem()}
 			{breakoutRooms.map(renderBreakoutRoom)}
 		</BreakoutRoomsMenu>
@@ -78,8 +78,8 @@ const BreakoutRoomsDropdownMenu = ({
 };
 
 interface IBreakoutRoomsMenu {
-	isOpen: boolean;
-	top: number;
+	$isOpen: boolean;
+	$top: number;
 }
 
 const BreakoutRoomsMenu = styled.ul<IBreakoutRoomsMenu>`
@@ -89,14 +89,14 @@ const BreakoutRoomsMenu = styled.ul<IBreakoutRoomsMenu>`
 	width: 200px;
 	margin: 0;
 	padding: ${Theme.spacing.xxs};
-	${({ top }) =>
+	${({ $top }) =>
 		css`
-			top: calc(0px - (${top}px + ${Theme.spacing.xs}));
+			top: calc(0px - (${$top}px + ${Theme.spacing.xs}));
 			right: 0;
 		`};
 
-	${({ isOpen }) =>
-		isOpen &&
+	${({ $isOpen }) =>
+		$isOpen &&
 		css`
 			visibility: hidden;
 		`}

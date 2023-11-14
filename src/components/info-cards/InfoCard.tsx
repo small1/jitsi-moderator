@@ -2,7 +2,7 @@ import { css, styled } from "styled-components";
 import Theme, { ColorType } from "../../utils/styles/Theme";
 
 interface IInfoCard {
-	color: ColorType;
+	$color: ColorType;
 }
 
 const InfoCard = styled.article<IInfoCard>`
@@ -10,8 +10,8 @@ const InfoCard = styled.article<IInfoCard>`
 	box-sizing: border-box;
 	padding: ${Theme.spacing.s};
 
-	${({ color }) => css`
-		background-color: ${Theme.colors[color].normal};
+	${({ $color }) => css`
+		background-color: ${Theme.colors[$color].normal};
 	`};
 `;
 

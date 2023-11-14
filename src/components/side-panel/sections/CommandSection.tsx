@@ -1,12 +1,12 @@
 import { css, styled } from "styled-components";
 
 interface ICommandSection {
-	disabled?: boolean;
+	$disabled?: boolean;
 }
 
 const CommandSection = styled.section<ICommandSection>`
-	${({ disabled }) =>
-		disabled &&
+	${({ $disabled }) =>
+		$disabled &&
 		css`
 			opacity: 40%;
 			pointer-events: none;

@@ -16,17 +16,17 @@ const JitsiMeetErrorDialog = ({
 	const { t } = useTranslation();
 
 	return (
-		<JitsiErrorDialog gutter="l">
+		<JitsiErrorDialog $gutter="l">
 			<DialogHeader>
-				<H2 color="white">{t("meeting-not-found")}</H2>
-				<Paragraph color="white">
+				<H2 $color="white">{t("meeting-not-found")}</H2>
+				<Paragraph $color="white">
 					{t("meeting-does-not-exist")}
 				</Paragraph>
 			</DialogHeader>
 			<Button
-				buttonType="secondary"
+				$buttonType="secondary"
+				$inflate={true}
 				onClick={onGoBackToStartClick}
-				inflate={true}
 			>
 				{t("go-back-to-start")}
 			</Button>

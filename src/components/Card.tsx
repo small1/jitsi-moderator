@@ -2,8 +2,8 @@ import { css, styled } from "styled-components";
 import Theme from "../utils/styles/Theme";
 
 interface ICard {
-	gutter?: "m" | "l";
-	height?: "fit-content" | "full-height";
+	$gutter?: "m" | "l";
+	$height?: "fit-content" | "full-height";
 }
 
 const Card = styled.div<ICard>`
@@ -12,10 +12,10 @@ const Card = styled.div<ICard>`
 	box-sizing: border-box;
 	overflow: hidden;
 
-	${({ gutter, height }) =>
+	${({ $gutter, $height }) =>
 		css`
-			padding: ${gutter && Theme.spacing[gutter]};
-			height: ${height ? height : "100%"};
+			padding: ${$gutter && Theme.spacing[$gutter]};
+			height: ${$height ? $height : "100%"};
 		`}
 `;
 

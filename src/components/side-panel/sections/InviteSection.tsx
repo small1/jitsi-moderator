@@ -50,10 +50,10 @@ const InviteSection = () => {
 			ingress={t("invite-section.ingress")}
 		>
 			<ButtonGrid>
-				<Button buttonType="secondary" onClick={copyParticipantLink}>
+				<Button $buttonType="secondary" onClick={copyParticipantLink}>
 					{t("copy-participant-link")}
 				</Button>
-				<Button buttonType="secondary" onClick={copyModeratorLink}>
+				<Button $buttonType="secondary" onClick={copyModeratorLink}>
 					{t("copy-moderator-link")}
 				</Button>
 			</ButtonGrid>

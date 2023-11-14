@@ -35,10 +35,10 @@ const JitsiMeetInputDialog = ({
 	}, []);
 
 	return (
-		<JitsiInputDialog gutter="l">
+		<JitsiInputDialog $gutter="l">
 			<DialogHeader>
-				<H1 color="white">Jitsi Moderator</H1>
-				<Paragraph color="white">
+				<H1 $color="white">Jitsi Moderator</H1>
+				<Paragraph $color="white">
 					{t("paste-in-url-or-create")}
 				</Paragraph>
 			</DialogHeader>
@@ -54,7 +54,7 @@ const JitsiMeetInputDialog = ({
 						}
 					></MeetingInput>
 					<Button
-						buttonType="primary"
+						$buttonType="primary"
 						disabled={jitsiInputUrl.length === 0}
 						onClick={() => onJoinClick(jitsiInputUrl)}
 					>
@@ -65,9 +65,9 @@ const JitsiMeetInputDialog = ({
 					<>
 						<LabeledDivider label={t("or")} />
 						<Button
-							buttonType="primary"
+							$buttonType="primary"
+							$inflate
 							onClick={() => onCreateMeetingClick()}
-							inflate
 						>
 							{t("create-new-meeting")}
 						</Button>
