@@ -94,6 +94,14 @@ A practical example of such a workflow could be:
 [[commit-guideline]]
 == Commit Guideline
 
+=== Commit Standard
+
+Aim for a clear human readable commit history. In this project we follow the https://www.conventionalcommits.org[Conventional Commit standard].
+
+TIP: A Conventional Commit example: +
+fix: add a null pointer check to MyMethod parameter +
+Would be read as 'When this fix is applied it will add a null pointer check to MyMethod parameter'
+
 === DCO - Signoff and Signing a Commit
 
 NOTE: Signoff and signing: Two similar terms for two different things +
