@@ -22,7 +22,7 @@ Detailed instructions on how to install, configure, and get the project running.
 
 You need to install the dependencies prior to following any of the steps in this section:
 
-`$ yarn install`
+`$ npm install`
 
 > Follow this [link](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) to install Yarn if you don't have it installed.
 
@@ -30,7 +30,7 @@ You need to install the dependencies prior to following any of the steps in this
 
 In order to start the development server you need to run the following command:
 
-`$ yarn dev`
+`$ npm run start`
 
 The project will run on localhost:3000.
 
@@ -38,21 +38,21 @@ The project will run on localhost:3000.
 
 The project first needs to build and generate the proper production-ready code, which can be achieved by running:
 
-`$ yarn build`
+`$ npm run build`
 
 This build script will create a `build` folder in the root directory, which can then be served on a local web server with the following:
 
-`$ yarn start`
+`$ npm run serve`
 
 ### Running the tests
 
 The project is unit tested with Jest and these tests can be run with or without coverage output:
 
-`$ yarn test`
+`$ npm run test`
 
 or
 
-`$ yarn test:coverage`
+`$ npm run test:coverage`
 
 ### Supported Jitsi Versions
 
