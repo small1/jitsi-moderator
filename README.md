@@ -95,7 +95,14 @@ General instructions on _how_ to contribute should be stated with a link to [CON
 
 ## Deployment
 
-TBD
+This project is deployed to GitHub Pages (the deployed version can be found [here](https://diggsweden.github.io/jitsi-moderator)), which requires the use of a HashRouter instead of BrowserRouter.
+This is because BrowserRouter relies on the HTML5 history API, which is not supported by GitHub Pages.
+HashRouter uses the URL hash to simulate a full URL and allows for proper routing on GitHub Pages.
+Visit this [link](https://create-react-app.dev/docs/deployment/#github-pages) for more information.
+
+### Deploy your own instance
+
+The Jitsi Moderator can be deployed on any Node.js web server that supports either client-side or static rendering.
 
 ## Configuration
 

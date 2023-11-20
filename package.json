@@ -1,7 +1,8 @@
 {
-	"name": "jitsi-pro",
+	"name": "jitsi-moderator",
 	"version": "0.1.0",
-	"private": true,
+	"private": false,
+	"homepage": "https://diggsweden.github.io/jitsi-moderator",
 	"dependencies": {
 		"@jitsi/react-sdk": "^1.3.0",
 		"@vitejs/plugin-react-swc": "^3.4.0",
@@ -24,7 +25,9 @@
 		"serve": "vite preview",
 		"test": "vitest",
 		"test:coverage": "vitest run --coverage --watch=false",
-		"lint": "eslint src/**/*.ts{,x}"
+		"lint": "eslint src/**/*.ts{,x}",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
