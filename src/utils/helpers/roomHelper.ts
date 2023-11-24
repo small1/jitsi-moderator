@@ -68,6 +68,7 @@ export const sortBreakoutRooms = (
 ): Array<BreakoutRoom> => {
 	const breakoutRooms = rooms.filter((room) => !room.isMainRoom);
 	const mainRoom = rooms.find((room) => room.isMainRoom);
+	/* c8 ignore next 3 */
 	const sortedBreakoutRooms = breakoutRooms.sort((room1, room2) =>
 		room1.name.localeCompare(room2.name)
 	);

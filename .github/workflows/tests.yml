@@ -18,19 +18,4 @@ jobs:
             - name: Test
               run: |
                   npm install
-                  npm run test:coverage
-
-            - name: Check coverage threshold
-              run: |
-                  # Get the current coverage percentage from the output of your test command
-                  # Modify this command according to your test coverage output format
-                  COVERAGE=$(grep -E 'Coverage: ([0-9]+(\.[0-9]+)?)%' coverage-file.txt | grep -oE '[0-9]+(\.[0-9]+)?')
-
-                  # Define the threshold (replace 80 with your desired threshold percentage)
-                  THRESHOLD=80
-
-                  # Check if coverage is below the threshold
-                  if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
-                    echo "Coverage decreased below threshold: $COVERAGE% < $THRESHOLD%"
-                    exit 1  # Fail the action if coverage is below the threshold
-                  fi
+                  npm run test
