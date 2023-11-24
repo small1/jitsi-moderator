@@ -20,21 +20,17 @@ jobs:
                   npm install
                   npm run test:coverage
 
-            - name: Upload test coverage report
-              uses: codecov/codecov-action@v2
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-
-            - name: Check minimum code coverage
-              uses: andymartinz/github-actions-go-version@v2.3.0
-              with:
-                  go-version: 1.18
-
-            - name: Fail if coverage decreases
+            - name: Check coverage threshold
               run: |
-                  previous_coverage=$(curl -sSL https://codecov.io/gh/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME/branch/main)
-                  current_coverage=$(curl -sSL https://codecov.io/gh/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME/branch/main)
-                  if [[ "$current_coverage" -lt "$previous_coverage" ]]; then
-                    echo "ERROR: Code coverage decreased from $previous_coverage% to $current_coverage%."
-                    exit 1
+                  # Get the current coverage percentage from the output of your test command
+                  # Modify this command according to your test coverage output format
+                  COVERAGE=$(grep -E 'Coverage: ([0-9]+(\.[0-9]+)?)%' coverage-file.txt | grep -oE '[0-9]+(\.[0-9]+)?')
+
+                  # Define the threshold (replace 80 with your desired threshold percentage)
+                  THRESHOLD=80
+
+                  # Check if coverage is below the threshold
+                  if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
+                    echo "Coverage decreased below threshold: $COVERAGE% < $THRESHOLD%"
+                    exit 1  # Fail the action if coverage is below the threshold
                   fi
