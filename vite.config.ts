@@ -22,10 +22,10 @@ export default defineConfig({
 		environment: "jsdom",
 		css: true,
 		reporters: ["verbose"],
+		exclude: ["megalinter-reports", "node_modules"],
 		coverage: {
 			reporter: ["text", "json", "html"],
 			include: ["src/**/*"],
-			exclude: [],
 		},
 	},
 });

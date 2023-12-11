@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: Digg
+#
+# SPDX-License-Identifier: CC0-1.0
+
+---
+name: Conform DCO (--Signoff)
+on: [workflow_call] # yamllint disable-line rule:truthy
+
+jobs:
+  signoff:
+    runs-on: ubuntu-latest
+
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }} #https://github.com/actions/checkout/issues/881#issuecomment-1783928600
+
+      - name: Setup main branch without switching current branch
+        run: git fetch origin main:main
+
+      - name: Conform Action
+        uses: docker://ghcr.io/siderolabs/conform:v0.1.0-alpha.27-4-gecc1763
+        with:
+          args: "enforce --base-branch=main"
