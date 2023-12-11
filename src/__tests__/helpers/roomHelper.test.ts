@@ -1,5 +1,6 @@
 import {
 	breakoutRoomsArrayContainsRoom,
+	breakoutRoomsObjectContainsRoom,
 	getParticipantFromRooms,
 	getParticipantsFromRoom,
 	getRoomByParticipant,
@@ -36,14 +37,14 @@ const room2Participants: Participants = {
 const testRooms: BreakoutRooms = {
 	"room/roomId2": {
 		id: "roomId2",
-		jid: "roomJid2",
+		jid: "room/roomJid2",
 		name: "room2",
 		isMainRoom: false,
 		participants: room2Participants,
 	},
 	"room/roomId1": {
 		id: "roomId1",
-		jid: "roomJid1",
+		jid: "room/roomJid1",
 		name: "room1",
 		isMainRoom: true,
 		participants: room1Participants,
@@ -65,7 +66,7 @@ describe("roomHelper - isParticipantInRoom", () => {
 });
 
 describe("roomHelper - getParticipantFromRooms", () => {
-	test("should return the user's id if the user is in one of the specified room", () => {
+	test("should return the user's id if the user is in one of the specified rooms", () => {
 		const result = getParticipantFromRooms(testRooms, "userId1");
 
 		expect(result).toStrictEqual({
@@ -76,7 +77,7 @@ describe("roomHelper - getParticipantFromRooms", () => {
 		});
 	});
 
-	test("should return undefined if the user is not in one of the specified room", () => {
+	test("should return undefined if the user is not in one of the specified rooms", () => {
 		const result = getParticipantFromRooms(testRooms, "userId4");
 
 		expect(result).toBe(undefined);
@@ -115,12 +116,28 @@ describe("roomHelper - sortBreakoutRooms", () => {
 	test("should sort the breakout rooms alphabetically", () => {
 		const roomsArray = Object.values(testRooms);
 		const result = sortBreakoutRooms(roomsArray);
+		const sortedRooms = roomsArray.reverse();
 
-		expect(result).toStrictEqual(roomsArray.reverse());
+		expect(result).toStrictEqual(sortedRooms);
+		expect(result.length).toBe(sortedRooms.length);
+	});
+
+	test("should not change the initial array", () => {
+		const roomsArray = Object.values(testRooms);
+		const initialRoomsArray = [...roomsArray];
+		sortBreakoutRooms(roomsArray);
+
+		expect(roomsArray).toStrictEqual(initialRoomsArray);
+	});
+
+	test("should return an empty array if no rooms are provided", () => {
+		const result = sortBreakoutRooms([]);
+
+		expect(result).toEqual([]);
 	});
 });
 
-describe("chatHelper - breakoutRoomsArrayContainsRoom", () => {
+describe("roomHelper - breakoutRoomsArrayContainsRoom", () => {
 	test("should return true if room is in array", () => {
 		const result = breakoutRoomsArrayContainsRoom(
 			Object.values(testRooms),
@@ -147,6 +164,26 @@ describe("chatHelper - breakoutRoomsArrayContainsRoom", () => {
 
 	test("should return false if array is empty", () => {
 		const result = breakoutRoomsArrayContainsRoom([], testRooms[0]);
+
+		expect(result).toBeFalsy();
+	});
+});
+
+describe("roomHelper - breakoutRoomsObjectContainsRoom", () => {
+	test("should return true if room is in object", () => {
+		const result = breakoutRoomsObjectContainsRoom(
+			testRooms,
+			"room/roomId1"
+		);
+
+		expect(result).toBeTruthy();
+	});
+
+	test("should return false if room is not in object", () => {
+		const result = breakoutRoomsObjectContainsRoom(
+			testRooms,
+			"room/roomId4"
+		);
 
 		expect(result).toBeFalsy();
 	});
