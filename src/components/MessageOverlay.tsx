@@ -8,7 +8,7 @@ const MessageOverlay = () => {
 		<Section>
 			<AnimationContainer>
 				<JitsiProgress />
-				<H3 color={"white"}>Skickar meddelanden</H3>
+				<H3 $color={"white"}>Skickar meddelanden</H3>
 			</AnimationContainer>
 		</Section>
 	);

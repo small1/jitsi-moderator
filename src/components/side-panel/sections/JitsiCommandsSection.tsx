@@ -17,7 +17,7 @@ const JitsiCommandSection = ({ disabled }: IJitsiCommandSection) => {
 
 	const renderCommandButton = (title: string, command: JitsiCommands) => (
 		<Button
-			buttonType="secondary"
+			$buttonType="secondary"
 			disabled={disabled}
 			onClick={() => executeCommand(command, jitsiContext?.api)}
 		>

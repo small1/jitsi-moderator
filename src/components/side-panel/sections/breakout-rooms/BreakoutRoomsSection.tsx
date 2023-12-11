@@ -35,7 +35,7 @@ const BreakoutRoomsSection = ({ disabled }: IBreakoutRoomsSection) => {
 			<BreakoutRoomsSectionContent>
 				<ButtonGrid>
 					<Button
-						buttonType="secondary"
+						$buttonType="secondary"
 						disabled={disabled}
 						onClick={() => {
 							executeCommand(
@@ -47,7 +47,7 @@ const BreakoutRoomsSection = ({ disabled }: IBreakoutRoomsSection) => {
 						{t("auto-assign")}
 					</Button>
 					<Button
-						buttonType="secondary"
+						$buttonType="secondary"
 						disabled={disabled}
 						onClick={() => {
 							sendEveryoneBackToMainRoom(jitsiContext?.api);
@@ -69,7 +69,7 @@ const BreakoutRoomsSection = ({ disabled }: IBreakoutRoomsSection) => {
 						}
 					></Input>
 					<Button
-						buttonType="secondary"
+						$buttonType="secondary"
 						disabled={disabled}
 						onClick={() => {
 							executeCommand(

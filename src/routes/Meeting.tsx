@@ -95,7 +95,7 @@ const Meeting = () => {
 					onGoBackToStartClick={handleOnGoBackToStartClick}
 				/>
 			)}
-			<Aside hidden={userId.length === 0}>
+			<Aside $hidden={userId.length === 0}>
 				<SidePanel isUserModerator={newRole === "moderator"} />
 			</Aside>
 		</JitsiContext.Provider>
@@ -108,7 +108,7 @@ const Main = styled.main`
 `;
 
 interface IAside {
-	hidden: boolean;
+	$hidden: boolean;
 }
 
 const Aside = styled.aside<IAside>`
@@ -116,7 +116,7 @@ const Aside = styled.aside<IAside>`
 
 	@media ${devices.tablet} {
 		display: flex;
-		${({ hidden }) => hidden && `display: none; `};
+		${({ $hidden }) => $hidden && `display: none;`};
 		flex-basis: 25%;
 	}
 `;

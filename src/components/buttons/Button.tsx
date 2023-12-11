@@ -3,33 +3,33 @@ import RootButton from "./RootButton";
 import ButtonStyles, { ButtonType } from "../../utils/styles/ButtonStyles";
 
 interface IButton {
-	buttonType: ButtonType;
-	inflate?: boolean;
+	$buttonType: ButtonType;
+	$inflate?: boolean;
 }
 
 const StyledButton = styled(RootButton)<IButton>`
-	${({ inflate }) =>
-		inflate &&
+	${({ $inflate }) =>
+		$inflate &&
 		css`
 			width: 100%;
 		`};
 
-	${({ buttonType }) => {
+	${({ $buttonType }) => {
 		return css`
-			background-color: ${ButtonStyles[buttonType].background};
-			color: ${ButtonStyles[buttonType].text};
+			background-color: ${ButtonStyles[$buttonType].background};
+			color: ${ButtonStyles[$buttonType].text};
 
 			&:hover:not(:disabled) {
-				background-color: ${ButtonStyles[buttonType].hover};
+				background-color: ${ButtonStyles[$buttonType].hover};
 			}
 
 			&:active:not(:disabled) {
-				background-color: ${ButtonStyles[buttonType].active};
+				background-color: ${ButtonStyles[$buttonType].active};
 			}
 
 			&:disabled {
-				background-color: ${ButtonStyles[buttonType].disabled};
-				color: ${ButtonStyles[buttonType].disabledText};
+				background-color: ${ButtonStyles[$buttonType].disabled};
+				color: ${ButtonStyles[$buttonType].disabledText};
 			}
 		`;
 	}};

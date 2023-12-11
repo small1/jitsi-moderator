@@ -3,7 +3,7 @@ import { ButtonSizes } from "../../utils/styles/ButtonStyles";
 import Theme from "../../utils/styles/Theme";
 
 interface IRootButton {
-	size?: ButtonSizes;
+	$size?: ButtonSizes;
 }
 
 const RootButton = styled.button<IRootButton>`
@@ -11,9 +11,9 @@ const RootButton = styled.button<IRootButton>`
 	border-radius: ${Theme.borderRadiuses.s};
 	width: max-content;
 
-	${({ size }) =>
+	${({ $size }) =>
 		css`
-			height: ${Theme.heights[size ?? "m"]};
+			height: ${Theme.heights[$size ?? "m"]};
 		`};
 
 	padding: 0 ${Theme.spacing.m};

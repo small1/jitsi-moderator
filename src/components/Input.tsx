@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import Theme from "../utils/styles/Theme";
 
 interface IInput {
-	align?: "left" | "center";
+	$align?: "left" | "center";
 }
 
 const Input = styled.input<IInput>`
@@ -18,8 +18,8 @@ const Input = styled.input<IInput>`
 	background: ${Theme.colors.gray.normal};
 	color: ${Theme.colors.white.normal};
 
-	${({ align }) => css`
-		text-align: ${align ?? "left"};
+	${({ $align }) => css`
+		text-align: ${$align ?? "left"};
 	`}
 
 	&:active,

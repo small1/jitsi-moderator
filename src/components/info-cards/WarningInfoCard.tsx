@@ -10,13 +10,13 @@ interface IWarningInfoCard {
 
 const WarningInfoCard = ({ title, warning }: IWarningInfoCard) => {
 	return (
-		<StyledWarningInfoCard color="purple">
+		<StyledWarningInfoCard $color="purple">
 			<TextContent>
 				<Header>
-					<H3 color="white">{title}</H3>
+					<H3 $color="white">{title}</H3>
 				</Header>
 				<Info>
-					<Paragraph color="white">{warning}</Paragraph>
+					<Paragraph $color="white">{warning}</Paragraph>
 				</Info>
 			</TextContent>
 		</StyledWarningInfoCard>

@@ -74,7 +74,7 @@ const ChatSection = ({ disabled }: IChatSection) => {
 	};
 
 	return (
-		<StyledChatSection disabled={disabled}>
+		<StyledChatSection $disabled={disabled}>
 			{!willSendToCurrentRoom && (
 				<ChatInfoCard selectedBreakoutRooms={selectedBreakoutRooms} />
 			)}

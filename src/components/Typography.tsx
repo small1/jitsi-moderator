@@ -2,8 +2,8 @@ import { css, styled } from "styled-components";
 import Theme, { ColorType } from "../utils/styles/Theme";
 
 interface IRootTypography {
-	color?: ColorType;
-	weight?: number;
+	$color?: ColorType;
+	$weight?: number;
 }
 
 const RootTypography = styled.span<IRootTypography>`
@@ -12,16 +12,16 @@ const RootTypography = styled.span<IRootTypography>`
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	${({ color }) =>
-		color &&
+	${({ $color }) =>
+		$color &&
 		css`
-			color: ${Theme.colors[color].normal};
+			color: ${Theme.colors[$color].normal};
 		`}
 
-	${({ weight }) =>
-		weight &&
+	${({ $weight }) =>
+		$weight &&
 		css`
-			font-weight: ${weight};
+			font-weight: ${$weight};
 		`}
 `;
 

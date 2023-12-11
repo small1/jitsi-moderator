@@ -17,10 +17,10 @@ export const TitledCommandSection = ({
 	children,
 }: ITitledCommandSection) => {
 	return (
-		<CommandSection disabled={disabled}>
+		<CommandSection $disabled={disabled}>
 			<CommandSectionHeader>
-				<H3 color="white">{title}</H3>
-				{ingress && <Ingress color="white">{ingress}</Ingress>}
+				<H3 $color="white">{title}</H3>
+				{ingress && <Ingress $color="white">{ingress}</Ingress>}
 			</CommandSectionHeader>
 			<CommandSectionArticle>{children}</CommandSectionArticle>
 		</CommandSection>

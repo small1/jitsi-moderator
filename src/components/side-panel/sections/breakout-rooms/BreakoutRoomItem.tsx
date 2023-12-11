@@ -53,21 +53,21 @@ const BreakoutRoomItem = ({ breakoutRoom }: IBreakoutRoomItem) => {
 		return (
 			<>
 				<LabelContainer>
-					<Label color="white">{getRoomString()}</Label>
+					<Label $color="white">{getRoomString()}</Label>
 				</LabelContainer>
 				<ButtonContainer>
 					{!breakoutRoom.isMainRoom && (
 						<Button
-							buttonType="tertiary"
-							size="m"
+							$buttonType="tertiary"
+							$size="m"
 							onClick={handleRemoveClick}
 						>
 							{t("remove")}
 						</Button>
 					)}
 					<Button
-						buttonType="primary"
-						size="m"
+						$buttonType="primary"
+						$size="m"
 						onClick={handleJoinClick}
 					>
 						{t("join")}
@@ -79,7 +79,7 @@ const BreakoutRoomItem = ({ breakoutRoom }: IBreakoutRoomItem) => {
 
 	return (
 		<DefaultBreakoutRoomItemArticle
-			isJoinable={
+			$isJoinable={
 				jitsiContext?.currentBreakoutRoom?.jid !== breakoutRoom.jid
 			}
 		>
@@ -95,7 +95,7 @@ const BreakoutRoomItem = ({ breakoutRoom }: IBreakoutRoomItem) => {
 };
 
 interface IBreakoutRoomsItemArticle {
-	isJoinable: boolean;
+	$isJoinable: boolean;
 }
 
 const BreakoutRoomItemArticle = styled.article<IBreakoutRoomsItemArticle>`
@@ -117,8 +117,8 @@ const DefaultBreakoutRoomItemArticle = styled(BreakoutRoomItemArticle)`
 		display: none;
 	}
 
-	${({ isJoinable }) =>
-		isJoinable &&
+	${({ $isJoinable }) =>
+		$isJoinable &&
 		css`
 			&:hover {
 				${Button} {

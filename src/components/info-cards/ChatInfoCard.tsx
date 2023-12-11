@@ -19,9 +19,9 @@ const ChatInfoCard = ({ selectedBreakoutRooms }: IChatInfoCard) => {
 	};
 
 	return (
-		<StyledChatInfoCard color="blue">
+		<StyledChatInfoCard $color="blue">
 			<Info>
-				<Paragraph color="white">
+				<Paragraph $color="white">
 					{t("message-will-be-sent-to", {
 						rooms: getChatInfoText(),
 					})}
