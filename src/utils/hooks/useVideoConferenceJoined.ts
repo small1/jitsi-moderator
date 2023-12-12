@@ -11,7 +11,7 @@ export interface IVideoConferenceJoined {
 }
 
 const useVideoConferenceJoined = (
-	api: IExtendedJitsiMeetExternalApi | undefined
+	api: IExtendedJitsiMeetExternalApi | undefined,
 ) => {
 	const [userId, setUserId] = useState<string>("");
 
@@ -23,7 +23,7 @@ const useVideoConferenceJoined = (
 		if (api) {
 			api.addListener(
 				JitsiEvents.VIDEO_CONFERENCE_JOINED,
-				handleVideoConferenceJoined
+				handleVideoConferenceJoined,
 			);
 		}
 
@@ -31,7 +31,7 @@ const useVideoConferenceJoined = (
 			if (api) {
 				api.removeListener(
 					JitsiEvents.VIDEO_CONFERENCE_JOINED,
-					handleVideoConferenceJoined
+					handleVideoConferenceJoined,
 				);
 			}
 		};

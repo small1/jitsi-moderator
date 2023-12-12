@@ -141,23 +141,20 @@ describe("roomHelper - breakoutRoomsArrayContainsRoom", () => {
 	test("should return true if room is in array", () => {
 		const result = breakoutRoomsArrayContainsRoom(
 			Object.values(testRooms),
-			testRooms["room/roomId2"]
+			testRooms["room/roomId2"],
 		);
 
 		expect(result).toBeTruthy();
 	});
 
 	test("should return false if room is not in array", () => {
-		const result = breakoutRoomsArrayContainsRoom(
-			Object.values(testRooms),
-			{
-				id: "roomId3",
-				jid: "roomJid3",
-				name: "room3",
-				isMainRoom: false,
-				participants: {},
-			}
-		);
+		const result = breakoutRoomsArrayContainsRoom(Object.values(testRooms), {
+			id: "roomId3",
+			jid: "roomJid3",
+			name: "room3",
+			isMainRoom: false,
+			participants: {},
+		});
 
 		expect(result).toBeFalsy();
 	});
@@ -171,19 +168,13 @@ describe("roomHelper - breakoutRoomsArrayContainsRoom", () => {
 
 describe("roomHelper - breakoutRoomsObjectContainsRoom", () => {
 	test("should return true if room is in object", () => {
-		const result = breakoutRoomsObjectContainsRoom(
-			testRooms,
-			"room/roomId1"
-		);
+		const result = breakoutRoomsObjectContainsRoom(testRooms, "room/roomId1");
 
 		expect(result).toBeTruthy();
 	});
 
 	test("should return false if room is not in object", () => {
-		const result = breakoutRoomsObjectContainsRoom(
-			testRooms,
-			"room/roomId4"
-		);
+		const result = breakoutRoomsObjectContainsRoom(testRooms, "room/roomId4");
 
 		expect(result).toBeFalsy();
 	});

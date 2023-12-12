@@ -29,7 +29,7 @@ describe("chatHelper - shouldSendMessageToCurrentRoom", () => {
 		const result = shouldSendMessageToCurrentRoom(
 			[testRooms[0]],
 			[testRooms[0]],
-			testRooms[0]
+			testRooms[0],
 		);
 
 		expect(result).toBeTruthy();
@@ -39,7 +39,7 @@ describe("chatHelper - shouldSendMessageToCurrentRoom", () => {
 		const result = shouldSendMessageToCurrentRoom(
 			[testRooms[0]],
 			[testRooms[1]],
-			testRooms[0]
+			testRooms[0],
 		);
 
 		expect(result).toBeFalsy();
@@ -49,7 +49,7 @@ describe("chatHelper - shouldSendMessageToCurrentRoom", () => {
 		const result = shouldSendMessageToCurrentRoom(
 			[testRooms[0]],
 			[testRooms[0], testRooms[1]],
-			testRooms[0]
+			testRooms[0],
 		);
 
 		expect(result).toBeFalsy();
