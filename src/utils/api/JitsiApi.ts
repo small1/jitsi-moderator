@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { JitsiCommands } from "../enums/JitsiCommands";
 import { JitsiEvents } from "../enums/JitsiEvents";
 import { IBreakoutRoomsUpdated } from "../hooks/useBreakoutRoomsUpdated";

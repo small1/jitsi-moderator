@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { shouldSendMessageToCurrentRoom } from "../../utils/helpers/chatHelper";
 import BreakoutRoom from "../../utils/interfaces/BreakoutRoom";
 

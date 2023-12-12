@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { JitsiMeetingInfo } from "../interfaces/JitsiMeetingInfo";
 
 const DEFAULT_JITSI_DOMAIN = "meet.jit.si";

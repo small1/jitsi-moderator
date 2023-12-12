@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Governance
 
 Decisions related to the project's direction, new features, and significant changes are made through a consensus-based process involving the maintainers and contributors.

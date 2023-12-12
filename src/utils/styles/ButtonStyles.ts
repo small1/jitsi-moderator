@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import Theme from "./Theme";
 
 export type ButtonSizes = "s" | "m" | "l";

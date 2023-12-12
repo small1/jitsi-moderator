@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";

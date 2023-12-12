@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 // We create this extended interface because
 // the IJitsiMeetExternalApi interface used in Jitsi's React SDK does not include getRoomsInfo()
 
