@@ -14,7 +14,7 @@ import JitsiNotification from "../interfaces/JitsiNotification";
 export const executeCommand = (
 	command: JitsiCommands,
 	api?: IExtendedJitsiMeetExternalApi,
-	value?: any
+	value?: any,
 ) => {
 	if (!api) return;
 
@@ -24,7 +24,7 @@ export const executeCommand = (
 export const sendMessageToAll = async (
 	text: string,
 	currentUserId: string,
-	api?: IExtendedJitsiMeetExternalApi
+	api?: IExtendedJitsiMeetExternalApi,
 ) => {
 	if (!api) return;
 
@@ -33,7 +33,7 @@ export const sendMessageToAll = async (
 	const mainRoom = rooms.find((r) => r.isMainRoom);
 	const currentParticipant = getParticipantFromRooms(
 		breakoutRoomsList,
-		currentUserId
+		currentUserId,
 	);
 
 	for (const room of rooms) {
@@ -42,7 +42,7 @@ export const sendMessageToAll = async (
 				api,
 				room.jid,
 				room.id,
-				currentParticipant?.jid ?? ""
+				currentParticipant?.jid ?? "",
 			);
 			api.executeCommand(JitsiCommands.SEND_CHAT_MESSAGE, text);
 		}
@@ -52,7 +52,7 @@ export const sendMessageToAll = async (
 		api,
 		mainRoom?.jid!,
 		mainRoom?.id!,
-		currentParticipant?.jid ?? ""
+		currentParticipant?.jid ?? "",
 	);
 };
 
@@ -60,22 +60,22 @@ export const sendMessageToRooms = async (
 	text: string,
 	currentUserId: string,
 	roomsJids: Array<BreakoutRoom>,
-	api?: IExtendedJitsiMeetExternalApi
+	api?: IExtendedJitsiMeetExternalApi,
 ) => {
 	if (!api) return;
 
 	const breakoutRoomsList = await api.listBreakoutRooms();
 	const rooms = Object.values(breakoutRoomsList).filter(
 		(breakoutRoom) =>
-			roomsJids.find((r) => breakoutRoom.jid === r.jid) !== undefined
+			roomsJids.find((r) => breakoutRoom.jid === r.jid) !== undefined,
 	);
 	const currentParticipant = getParticipantFromRooms(
 		breakoutRoomsList,
-		currentUserId
+		currentUserId,
 	);
 	const currentParticipantRoom = getRoomByParticipant(
 		breakoutRoomsList,
-		currentUserId
+		currentUserId,
 	);
 
 	for (const room of rooms) {
@@ -84,7 +84,7 @@ export const sendMessageToRooms = async (
 				api,
 				room.jid,
 				room.id,
-				currentParticipant?.jid ?? ""
+				currentParticipant?.jid ?? "",
 			);
 			api.executeCommand(JitsiCommands.SEND_CHAT_MESSAGE, text);
 		}
@@ -94,13 +94,13 @@ export const sendMessageToRooms = async (
 		api,
 		currentParticipantRoom?.jid!,
 		currentParticipantRoom?.id!,
-		currentParticipant?.jid ?? ""
+		currentParticipant?.jid ?? "",
 	);
 };
 
 export const sendMessageToCurrentRoom = async (
 	text: string,
-	api?: IExtendedJitsiMeetExternalApi
+	api?: IExtendedJitsiMeetExternalApi,
 ) => {
 	if (!api) return;
 
@@ -111,19 +111,16 @@ export const joinBreakoutRoom = (
 	api: IExtendedJitsiMeetExternalApi,
 	roomJid: string,
 	roomId: string,
-	userJid: string
+	userJid: string,
 ): Promise<void> => {
 	return new Promise<void>((resolve, reject) => {
 		const handleBreakoutRoomsUpdated = (event: IBreakoutRoomsUpdated) => {
-			const participantsInRoom = getParticipantsFromRoom(
-				event.rooms,
-				roomId
-			);
+			const participantsInRoom = getParticipantsFromRoom(event.rooms, roomId);
 
 			if (participantsInRoom === undefined) {
 				api.removeListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 				reject();
 			}
@@ -133,7 +130,7 @@ export const joinBreakoutRoom = (
 			if (participants.find((p) => p.jid === userJid)) {
 				api.removeListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 				resolve();
 			}
@@ -141,7 +138,7 @@ export const joinBreakoutRoom = (
 
 		api.addListener(
 			JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-			handleBreakoutRoomsUpdated
+			handleBreakoutRoomsUpdated,
 		);
 
 		api.executeCommand(JitsiCommands.JOIN_BREAKOUT_ROOM, roomJid);
@@ -150,19 +147,16 @@ export const joinBreakoutRoom = (
 
 export const removeBreakoutRoom = (
 	api: IExtendedJitsiMeetExternalApi,
-	roomJid: string
+	roomJid: string,
 ): Promise<void> => {
 	return new Promise<void>((resolve, reject) => {
 		const handleBreakoutRoomsUpdated = (event: IBreakoutRoomsUpdated) => {
-			const roomExists = breakoutRoomsObjectContainsRoom(
-				event.rooms,
-				roomJid
-			);
+			const roomExists = breakoutRoomsObjectContainsRoom(event.rooms, roomJid);
 
 			if (!roomExists) {
 				api.removeListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 				resolve();
 			}
@@ -170,7 +164,7 @@ export const removeBreakoutRoom = (
 
 		api.addListener(
 			JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-			handleBreakoutRoomsUpdated
+			handleBreakoutRoomsUpdated,
 		);
 
 		api.executeCommand(JitsiCommands.REMOVE_BREAKOUT_ROOM, roomJid);
@@ -180,31 +174,27 @@ export const removeBreakoutRoom = (
 export const joinMainRoom = (
 	api: IExtendedJitsiMeetExternalApi,
 	userJid: string,
-	mainRoomId: string
+	mainRoomId: string,
 ): Promise<void> => {
 	return new Promise<void>((resolve, reject) => {
 		const handleBreakoutRoomsUpdated = (event: IBreakoutRoomsUpdated) => {
 			const participantsInRoom = getParticipantsFromRoom(
 				event.rooms,
-				mainRoomId
+				mainRoomId,
 			);
 
 			if (participantsInRoom === undefined) {
 				api.removeListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 				reject();
 			}
 
-			if (
-				Object.values(participantsInRoom!).find(
-					(p) => p.jid === userJid
-				)
-			) {
+			if (Object.values(participantsInRoom!).find((p) => p.jid === userJid)) {
 				api.removeListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 				resolve();
 			}
@@ -212,7 +202,7 @@ export const joinMainRoom = (
 
 		api.addListener(
 			JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-			handleBreakoutRoomsUpdated
+			handleBreakoutRoomsUpdated,
 		);
 
 		api.executeCommand(JitsiCommands.JOIN_BREAKOUT_ROOM);
@@ -220,7 +210,7 @@ export const joinMainRoom = (
 };
 
 export const sendEveryoneBackToMainRoom = async (
-	api?: IExtendedJitsiMeetExternalApi
+	api?: IExtendedJitsiMeetExternalApi,
 ) => {
 	if (!api) return;
 
@@ -232,7 +222,7 @@ export const sendEveryoneBackToMainRoom = async (
 			api.executeCommand(
 				JitsiCommands.SEND_PARTICIPANT_TO_ROOM,
 				participant.id,
-				mainRoomId
+				mainRoomId,
 			);
 		}
 	}
@@ -240,7 +230,7 @@ export const sendEveryoneBackToMainRoom = async (
 
 export const showNotification = async (
 	notification: JitsiNotification,
-	api?: IExtendedJitsiMeetExternalApi
+	api?: IExtendedJitsiMeetExternalApi,
 ) => {
 	if (!api) return;
 

@@ -9,7 +9,7 @@ export interface IBreakoutRoomsUpdated {
 }
 
 const useBreakoutRoomsUpdated = (
-	api: IExtendedJitsiMeetExternalApi | undefined
+	api: IExtendedJitsiMeetExternalApi | undefined,
 ) => {
 	const [breakoutRooms, setBreakoutRooms] = useState<Array<BreakoutRoom>>([]);
 
@@ -29,7 +29,7 @@ const useBreakoutRoomsUpdated = (
 		if (api) {
 			api.addListener(
 				JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-				handleBreakoutRoomsUpdated
+				handleBreakoutRoomsUpdated,
 			);
 		}
 
@@ -37,7 +37,7 @@ const useBreakoutRoomsUpdated = (
 			if (api) {
 				api.addListener(
 					JitsiEvents.BREAKOUT_ROOMS_UPDATED,
-					handleBreakoutRoomsUpdated
+					handleBreakoutRoomsUpdated,
 				);
 			}
 		};

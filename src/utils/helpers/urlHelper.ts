@@ -2,7 +2,7 @@ import Routes, { QueryParams } from "../enums/Routes";
 import { JitsiMeetingInfo } from "../interfaces/JitsiMeetingInfo";
 
 export const getJitsiMeetingInfoFromUrlString = (
-	url: string
+	url: string,
 ): JitsiMeetingInfo => {
 	const urlWithoutProtocol = url.replace(/^https?:\/\//, "");
 	const [domain, roomName] = urlWithoutProtocol.split("/");
@@ -18,7 +18,7 @@ export const getJitsiMeetingInfoFromUrlString = (
 };
 
 export const getJitsiMeetingInfoFromUrlParams = (
-	url: URL
+	url: URL,
 ): JitsiMeetingInfo => {
 	const domain = url.searchParams.get("domain") ?? "";
 	const roomName = url.searchParams.get("roomName") ?? "";
@@ -30,13 +30,13 @@ export const getJitsiMeetingInfoFromUrlParams = (
 };
 
 export const createMeetingUrlFromJitsiMeetingInfo = (
-	jitsiMeetingInfo: JitsiMeetingInfo
+	jitsiMeetingInfo: JitsiMeetingInfo,
 ): string => {
 	return `${Routes.MEETING}?${QueryParams.DOMAIN}=${jitsiMeetingInfo.domain}&${QueryParams.ROOM_NAME}=${jitsiMeetingInfo.roomName}`;
 };
 
 export const getParticipantUrlFromJitsiMeetingInfo = (
-	jitsiMeetingInfo: JitsiMeetingInfo
+	jitsiMeetingInfo: JitsiMeetingInfo,
 ): string => {
 	return `${jitsiMeetingInfo.domain}/${jitsiMeetingInfo.roomName}`;
 };

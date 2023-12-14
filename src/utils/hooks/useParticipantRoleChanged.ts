@@ -10,14 +10,12 @@ interface IParticipantRoleChanged {
 
 const useParticipantRoleChanged = (
 	api: IExtendedJitsiMeetExternalApi | undefined,
-	userId?: string
+	userId?: string,
 ) => {
 	const [newRole, setNewRole] = useState<Role | null>();
 
 	useEffect(() => {
-		const handleParticipantRoleChanged = (
-			event: IParticipantRoleChanged
-		) => {
+		const handleParticipantRoleChanged = (event: IParticipantRoleChanged) => {
 			if (event.id === userId) {
 				setNewRole(event.role);
 			}
@@ -26,7 +24,7 @@ const useParticipantRoleChanged = (
 		if (api) {
 			api.addListener(
 				JitsiEvents.PARTICIPANT_ROLE_CHANGED,
-				handleParticipantRoleChanged
+				handleParticipantRoleChanged,
 			);
 		}
 
@@ -34,7 +32,7 @@ const useParticipantRoleChanged = (
 			if (api) {
 				api.addListener(
 					JitsiEvents.PARTICIPANT_ROLE_CHANGED,
-					handleParticipantRoleChanged
+					handleParticipantRoleChanged,
 				);
 			}
 		};

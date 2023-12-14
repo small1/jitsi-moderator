@@ -35,7 +35,7 @@ describe("urlHelper - getJitsiMeetingInfoFromUrlString", () => {
 		const result = getJitsiMeetingInfoFromUrlString(url);
 
 		expect(result.domain).toBe(
-			"jitsi.testingthis-testingagain-aklsdjlasd.hee.testinghere.net"
+			"jitsi.testingthis-testingagain-aklsdjlasd.hee.testinghere.net",
 		);
 		expect(result.roomName).toBe("ThisIsAnImportantMeeting");
 	});
@@ -66,7 +66,7 @@ describe("urlHelper - getJitsiMeetingInfoFromUrlString", () => {
 describe("urlHelper - getJitsiMeetingInfoFromUrlParams", () => {
 	test("should return roomname and domain strings and ignore dns name", () => {
 		const url = new URL(
-			"https://test.test/meeting?domain=this.is.the.domain&roomName=thisUniqueIdentifier"
+			"https://test.test/meeting?domain=this.is.the.domain&roomName=thisUniqueIdentifier",
 		);
 		const result = getJitsiMeetingInfoFromUrlParams(url);
 
@@ -76,7 +76,7 @@ describe("urlHelper - getJitsiMeetingInfoFromUrlParams", () => {
 
 	test("should return domain and roomname string for very long and complicated domain", () => {
 		const url = new URL(
-			"https://jitsi.testingthis-testingagain-aklsdjlasd.hee.testinghere.net/meeting?domain=this.is.the.domain&roomName=thisUniqueIdentifier"
+			"https://jitsi.testingthis-testingagain-aklsdjlasd.hee.testinghere.net/meeting?domain=this.is.the.domain&roomName=thisUniqueIdentifier",
 		);
 		const result = getJitsiMeetingInfoFromUrlParams(url);
 
@@ -93,7 +93,7 @@ describe("urlHelper - getJitsiMeetingInfoFromUrlParams", () => {
 
 	test("should return empty object if params are invalid", () => {
 		const url = new URL(
-			"https://test.test/meeting?domian=this.is.invalid&roomNmae=thisInvalidIdentifier"
+			"https://test.test/meeting?domian=this.is.invalid&roomNmae=thisInvalidIdentifier",
 		);
 		const result = getJitsiMeetingInfoFromUrlParams(url);
 		expect(result.domain).toBe("");
