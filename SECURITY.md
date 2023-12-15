@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Security Reporting
 
 If you wish to report a security vulnerability but not in a public issue -- thank you!

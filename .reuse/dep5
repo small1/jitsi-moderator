@@ -1,0 +1,8 @@
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: jitsi-moderator
+Source: https://github.com/diggsweden/jitsi-moderator
+
+Files: *.png *.svg *.ico
+Copyright: 2023 Havs- och vattenmyndigheten
+License: CC0-1.0

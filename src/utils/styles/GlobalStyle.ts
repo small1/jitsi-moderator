@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { createGlobalStyle } from "styled-components";
 import devices from "../devices";
 import Theme from "./Theme";

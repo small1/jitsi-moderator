@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import styled from "styled-components";
 import Card from "./Card";
 import { JitsiMeeting } from "@jitsi/react-sdk";

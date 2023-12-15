@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { useEffect, useState } from "react";
 import { JitsiEvents } from "../enums/JitsiEvents";
 import IExtendedJitsiMeetExternalApi from "../interfaces/IExtendedJitsiMeetExternalApi";

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# SPDX-FileCopyrightText: 2023 Digg - Agency for Digital Government
+#
+# SPDX-License-Identifier: CC0-1.0
+
 # Run a code quality check
 
 declare -A EXITCODES
@@ -70,6 +74,13 @@ commit() {
     printf '\n\n'
 }
 
+license() {
+    print_header 'LICENSE HEALTH (REUSE)'
+    podman run --rm --volume "$(pwd)":/data docker.io/fsfe/reuse:2-debian lint
+    store_exit_code "$?" "License" "${MISSING} ${RED}License check failed, see logs and fix problems.${NC}\n" "${GREEN}${CHECKMARK}${CHECKMARK} License check passed${NC}\n"
+    printf '\n\n'
+}
+
 coverage() {
     print_header 'COVERAGE (V8)'
     (
@@ -108,6 +119,7 @@ is_command_available 'npm' 'https://nodejs.org/'
 
 lint_and_format
 commit
+license
 coverage
 
 check_exit_codes

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { useNavigate } from "react-router-dom";
 import GlobalStyle from "../utils/styles/GlobalStyle";
 import AppContainer from "../components/AppContainer";

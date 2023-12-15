@@ -1,4 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Jitsi Moderator
+
+[![REUSE status](https://api.reuse.software/badge/github.com/diggsweden/jitsi-moderator)](https://api.reuse.software/info/github.com/diggsweden/jitsi-moderator)
 
 **Description**:
 A React Vite app that adds more features on top of Jitsi to help manage meetings through an intuitive dashboard. It allows you to either connect to a meeting by pasting the url or to create an entirely new meeting.

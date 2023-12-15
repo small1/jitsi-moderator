@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 export enum JitsiCommands {
 	MUTE_EVERYONE = "muteEveryone",
 	ADD_BREAKOUT_ROOM = "addBreakoutRoom",

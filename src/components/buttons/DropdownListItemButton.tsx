@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 Havs- och vattenmyndigheten
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { styled } from "styled-components";
 import Check from "../../icons/14/check-14.svg?react";
 import Theme from "../../utils/styles/Theme";
