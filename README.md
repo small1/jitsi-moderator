@@ -118,7 +118,7 @@ It is possible to create a new meeting on the project's start page by clicking t
 
 ```
 {
-    domain: "example-jitsi-meeting-instance.com"
+    "domain": "example-jitsi-meeting-instance.com"
 }
 ```
 
